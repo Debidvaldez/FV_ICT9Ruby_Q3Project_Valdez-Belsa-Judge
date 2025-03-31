@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3t/css/bootstrap.min.css" rel="stylesheet">
+	<title>Practice</title>
+	<style>
+		body {
+			background-size: cover;
+			background-position: center center;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			min-height: 100vh; 
+			font-family: 'Courier New', Courier, monospace; 
+			margin: 50px;
+		}        
+	   	.navvy {
+	        margin: 20px;
+	        padding: 20px;
+	        color: black;
+	    } 
+	</style>
+</head>
+<body>
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-md navbar-light fixed-top" id="navbar">
+		<div class="container-fluid">
+		    <h4>Guide</h4>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+		        <ul class="navbar-nav">
+		        	<li class="nav-item">
+		                <a class="nav-link" href="index.html"><h6>Home</h6></a>
+		            </li>
+		            <li class="nav-item">
+		                <a class="nav-link" href="page1.html"><h6>About</h6></a>
+		            </li>
+		        </ul>
+		    </div>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<form>
+		<label>From:</label><br><br>
+			<select class="form-select" id="From">
+				<option value="none">Select...</option>
+				<option value="0">Dr. Santos</option>
+				<option value="0">Ninoy Aquino Ave.</option>
+				<option value="5">PITX</option>
+				<option value="5">MIA Road</option>
+				<option value="5">Redemptorist-Aseana</option>		
+				<option value="10">Baclaran</option>
+				<option value="10">EDSA</option>
+				<option value="10">Libertad</option>
+				<option value="10">Gil Puyat</option>
+				<option value="10">Vito Cruz</option>
+				<option value="15">Quirino</option>
+				<option value="15">Pedro Gil</option>
+				<option value="15">United Nations</option>
+				<option value="15">Central Terminal</option>
+				<option value="15">Carriedo</option>
+				<option value="20">Doroteo Jose</option>
+				<option value="20">Bambang</option>
+				<option value="20">Tayuman</option>
+				<option value="20">Blumtritt</option>
+				<option value="20">Jose Abad Santos</option>			
+				<option value="20">R. Papa</option>
+				<option value="25">5th Ave.</option>
+				<option value="25">Yamaha Monumento</option>
+				<option value="30">Balintawak</option>
+				<option value="30">Fernando Poe Jr.</option>
+			</select>
+		<br><br>
+
+		<label>To:</label><br><br>
+			<select class="form-select" id="To">
+				<option value="none">Select...</option>
+				<option value="0">Dr. Santos</option>
+				<option value="0">Ninoy Aquino Ave.</option>
+				<option value="5">PITX</option>
+				<option value="5">MIA Road</option>
+				<option value="5">Redemptorist-Aseana</option>
+				<option value="10">Baclaran</option>
+				<option value="10">EDSA</option>
+				<option value="10">Libertad</option>
+				<option value="10">Gil Puyat</option>
+				<option value="10">Vito Cruz</option>
+				<option value="15">Quirino</option>
+				<option value="15">Pedro Gil</option>
+				<option value="15">United Nations</option>
+				<option value="15">Central Terminal</option>
+				<option value="15">Carriedo</option>
+				<option value="20">Doroteo Jose</option>
+				<option value="20">Bambang</option>
+				<option value="20">Tayuman</option>
+				<option value="20">Blumtritt</option>
+				<option value="20">Jose Abad Santos</option>
+				<option value="20">R. Papa</option>
+				<option value="25">5th Ave.</option>
+				<option value="25">Yamaha Monumento</option>
+				<option value="30">Balintawak</option>
+				<option value="30">Fernando Poe Jr.</option>
+			</select>
+		<br><br>
+			<button type="button" class="fare">Fare</button>
+		<div>
+			<h3>Price:</h3>
+			<div id="price" class="price">0.00</div>
+		</div>
+	</form>
+
+	<script>
+		function calculationFare() {
+			var basefare = 15;
+			var From = document.getElementById("From").value;
+			var To = document.getElementById("To").value;`	`
+			var fare = basefare + Math.abs(From - To) * 2
+			document.getElementById("price").innerText = fare.toFixed(2);
+		}
+		document.getElementById("From").addEventListener("change", calculationFare);
+		document.getElementById("To").addEventListener("change", calculationFare);
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3t/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
